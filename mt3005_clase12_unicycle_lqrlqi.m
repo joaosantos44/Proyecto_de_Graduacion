@@ -243,9 +243,9 @@ end
 %% Animación y generación de figuras (NO modificar)
 figure('WindowState', 'maximized');
 
-colors_leader = winter(3);
+colors_leader = summer(3);
 colors_follower = autumn(3);
-colors_follower2 = summer(3);
+colors_follower2 = winter(3);
 
 
 subplot(6,2,1);
