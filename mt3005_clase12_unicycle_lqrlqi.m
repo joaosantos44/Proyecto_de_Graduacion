@@ -244,7 +244,7 @@ end
 figure('WindowState', 'maximized');
 
 colors_leader = summer(3);
-colors_follower = autumn(3);
+colors_follower = spring(3);
 colors_follower2 = winter(3);
 
 
