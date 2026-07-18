@@ -1,6 +1,17 @@
 clear all;
-% Codigo de LQI y LQR de MIguel para robotica en el cual se realizaron 
-% modificaciones para la persecucion ciclica
+% =========================================================================
+% Difeomorfismo + LQI + trayectoria
+% -------------------------------------------------------------------------
+% Control LQI para seguimiento de trayectoria circular con
+% 4 agentes en formacion (lider + 3 seguidores encadenados).
+% El lider sigue una trayectoria circular. 
+% Los seguidores rastrean la posicion trasera
+% del agente anterior con la misma logica LQI.
+% Los codigos fueron obtenidos de los diversos lavoratoriso de Robotica 1
+% dados por Miguel Zea y adaptados a un funcionamiento para una trayectoria
+% circular
+% =========================================================================
+
 
 %% Parámetros del sistema y definición del sistema dinámico 
 % xi = [x; y; theta]  y  u = [v; omega]
@@ -16,7 +27,7 @@ A = zeros(2);
 B = eye(2); 
 
 %% Parámetros de la simulación
-NV = 10; % Numero de Vueltas
+NV = 2; % Numero de Vueltas
 dt = 0.01; % período de muestreo
 t0 = 0; % tiempo inicial
 tf = NV*8; % tiempo final 
