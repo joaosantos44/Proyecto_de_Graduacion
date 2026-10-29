@@ -1,0 +1,808 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.6671580651099035 0.005269542900500982 0.7448975419991863 3.1298298925649504
+  position 0.9811588854984635 0.4611684603670388 9.842123378325018
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 3.8 4.8
+  floorTileSize 3.8 3.2
+  wallThickness 0.1
+}
+DEF ROBOT1 Robot {
+  translation -1.0194965104629696 0.5220038257323264 -0.002167947568485658
+  rotation 0.00010111691767483084 6.155545510307331e-05 0.9999999929931472 1.0571328815187073
+  children [
+    DEF Body_r1 Pose {
+      translation 0 0 0.0255
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+          }
+          geometry Cylinder {
+            height 0.019
+            radius 0.075
+          }
+        }
+      ]
+    }
+    Compass {
+      rotation 0 0 1 1.5707996938995747
+    }
+    GPS {
+      rotation 0 0 1 1.5707996938995747
+    }
+    Transform {
+      translation 0 0 0.016
+      scale 0.001 0.001 0.001
+      children [
+        Shape {
+          appearance PBRAppearance {
+            roughness 1
+            metalness 0
+          }
+          geometry Mesh {
+            url [
+              "C:/Users/joaos/OneDrive/Escritorio/Tesis/Code/wbtlab11/Modelos_3D/Pololu/BumperV2.stl"
+            ]
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position -757.0369662036178
+        anchor 0.07 0 0.037
+      }
+      device [
+        RotationalMotor {
+          name "motor_1"
+          maxVelocity 84
+        }
+      ]
+      endPoint Solid {
+        translation 0.07 0 0.037
+        rotation -0.43795113626033305 -0.7853042940591805 -0.43760252282236156 4.4737977300700535
+        children [
+          DEF wheel_r1_1 Shape {
+            appearance PBRAppearance {
+              baseColor 0 0 0
+              roughness 1
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.035
+            }
+          }
+        ]
+        boundingObject USE wheel_r1_1
+        physics Physics {
+        }
+        linearVelocity -8.095992089289701e-05 4.5679160614627556e-05 -1.1145766796933862e-10
+        angularVelocity -0.0013124604325747303 -0.0023261473967470195 0.001402905816506921
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position -596.3938911332707
+        anchor -0.07 0 0.037
+      }
+      device [
+        RotationalMotor {
+          name "motor_2"
+          maxVelocity 84
+        }
+      ]
+      endPoint Solid {
+        translation -0.07 0 0.037
+        rotation -0.24419921837536962 -0.9385245777450212 -0.24400483338120174 4.64978001571917
+        children [
+          DEF wheel_r1_2 Shape {
+            appearance PBRAppearance {
+              baseColor 0 0 0
+              roughness 1
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.035
+            }
+          }
+        ]
+        name "r1_wheel2"
+        boundingObject USE wheel_r1_2
+        physics Physics {
+        }
+        linearVelocity 9.055957306557312e-05 -5.1095399232262325e-05 1.287737324758891e-10
+        angularVelocity 0.0014664471216615815 0.0025990725011793745 0.001402893515970073
+      }
+    }
+    BallJoint {
+      jointParameters BallJointParameters {
+        position 1822.1877198918323
+        anchor 0 0.06 0.013
+      }
+      jointParameters2 JointParameters {
+        position -1.397439195319092
+        axis 1 0 0
+      }
+      jointParameters3 JointParameters {
+        position 3490.61144745474
+        axis 0 1 0
+      }
+      endPoint Solid {
+        translation 1.3192684791829556e-09 0.060000054657727286 0.012999892866773121
+        rotation 0.5077390014175629 0.8612272313399152 -0.022107972274278857 -2.396611412549966
+        children [
+          DEF CasterBall_r1_1 Shape {
+            appearance PBRAppearance {
+              baseColor 0.333333 0.333333 0.498039
+              roughness 1
+              metalness 0
+            }
+            geometry Sphere {
+              radius 0.01
+            }
+          }
+        ]
+        name "r1_caster1"
+        boundingObject USE CasterBall_r1_1
+        physics Physics {
+        }
+        linearVelocity -4.037149898199209e-05 -7.417467248690636e-05 1.0234451960609363e-05
+        angularVelocity -2.707300203159541 7.057415303671391 -0.0029929660494889495
+      }
+    }
+    BallJoint {
+      jointParameters BallJointParameters {
+        position -4634.663524466637
+        anchor 0 -0.06 0.013
+      }
+      jointParameters2 JointParameters {
+        position 0.5806628184405346
+        axis 1 0 0
+      }
+      jointParameters3 JointParameters {
+        position 710.5423970821597
+        axis 0 1 0
+      }
+      endPoint Solid {
+        translation -4.147121680092569e-08 -0.05999995746936504 0.012999967833350275
+        rotation 0.9811120533999154 0.1697720896813586 0.09271772343315049 -2.38659846624857
+        children [
+          DEF CasterBall_r1_2 Shape {
+            appearance PBRAppearance {
+              baseColor 0.333333 0.333333 0.498039
+              roughness 1
+              metalness 0
+            }
+            geometry Sphere {
+              radius 0.01
+            }
+          }
+        ]
+        name "r1_caster2"
+        boundingObject USE CasterBall_r1_2
+        physics Physics {
+        }
+        linearVelocity 4.259331699080461e-05 7.198546665059059e-05 -1.0227705075824603e-05
+        angularVelocity 15.826322644102195 -2.0669349496492107 -0.0012650269344619887
+      }
+    }
+  ]
+  name "robot1"
+  contactMaterial "plastic"
+  boundingObject USE Body_r1
+  physics Physics {
+  }
+  controller "robot1"
+  selfCollision TRUE
+  linearVelocity 3.126182022344223e-06 -1.7659712958671844e-06 2.303229710992884e-10
+  angularVelocity 8.20643926583278e-05 0.00014545033656587487 0.0014029180826937162
+}
+DEF ROBOT2 Robot {
+  translation -1.2703771592298914 0.7316290534191258 -0.0021679424692564835
+  rotation 9.775915480493705e-08 5.330559769845582e-07 -0.9999999999998531 2.7782145509050196
+  children [
+    DEF Body_r2 Pose {
+      translation 0 0 0.0255
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+            roughness 1
+            metalness 0
+          }
+          geometry Cylinder {
+            height 0.019
+            radius 0.075
+          }
+        }
+      ]
+    }
+    Compass {
+      rotation 0 0 1 1.5707996938995747
+    }
+    GPS {
+      rotation 0 0 1 1.5707996938995747
+    }
+    Transform {
+      translation 0 0 0.016
+      scale 0.001 0.001 0.001
+      children [
+        Shape {
+          appearance PBRAppearance {
+            roughness 1
+            metalness 0
+          }
+          geometry Mesh {
+            url [
+              "C:/Users/joaos/OneDrive/Escritorio/Tesis/Code/wbtlab11/Modelos_3D/Pololu/BumperV2.stl"
+            ]
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position -844.4339156390394
+        anchor 0.07 0 0.037
+      }
+      device [
+        RotationalMotor {
+          name "motor_1"
+          maxVelocity 84
+        }
+      ]
+      endPoint Solid {
+        translation 0.07 0 0.037
+        rotation -0.58025960502071 -0.5719557703233765 -0.5797977126334692 4.18136608111047
+        children [
+          DEF wheel_r2_1 Shape {
+            appearance PBRAppearance {
+              baseColor 0 0 0
+              roughness 1
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.035
+            }
+          }
+        ]
+        boundingObject USE wheel_r2_1
+        physics Physics {
+        }
+        linearVelocity 2.3714391336767846e-14 -6.035494450411289e-14 -3.69263426806381e-16
+        angularVelocity 1.7270584695852782e-12 6.696514634821413e-13 -9.358307472847106e-14
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position -698.7459295351074
+        anchor -0.07 0 0.037
+      }
+      device [
+        RotationalMotor {
+          name "motor_2"
+          maxVelocity 84
+        }
+      ]
+      endPoint Solid {
+        translation -0.07 0 0.037
+        rotation 0.5211204395354522 -0.6762389682543956 0.5207056225091174 4.331532484919171
+        children [
+          DEF wheel_r2_2 Shape {
+            appearance PBRAppearance {
+              baseColor 0 0 0
+              roughness 1
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.035
+            }
+          }
+        ]
+        name "r2_wheel2"
+        boundingObject USE wheel_r2_2
+        physics Physics {
+        }
+        linearVelocity 2.7380792862034256e-14 -7.215573617681264e-14 3.1724265044137233e-22
+        angularVelocity 2.0576943790093913e-12 7.987316547580509e-13 -9.391947060608076e-14
+      }
+    }
+    BallJoint {
+      jointParameters BallJointParameters {
+        position -32.63791523630496
+        anchor 0 0.06 0.013
+      }
+      jointParameters2 JointParameters {
+        position 1.5563435382762651
+        axis 1 0 0
+      }
+      jointParameters3 JointParameters {
+        position -96.77825475589643
+        axis 0 1 0
+      }
+      endPoint Solid {
+        translation -5.2581505372018e-08 0.06000000909363745 0.01299989584453878
+        rotation 0.7553661266196936 0.6355155925204988 -0.1598184795913173 -2.018852098627237
+        children [
+          DEF CasterBall_r2_1 Shape {
+            appearance PBRAppearance {
+              baseColor 0.333333 0.333333 0.498039
+              roughness 1
+              metalness 0
+            }
+            geometry Sphere {
+              radius 0.01
+            }
+          }
+        ]
+        name "r2_caster1"
+        boundingObject USE CasterBall_r2_1
+        physics Physics {
+        }
+        linearVelocity -1.5784087331308327e-11 -3.0985658059489075e-12 -2.245720748563291e-11
+        angularVelocity -7.996810610787729e-05 0.00041108374661511903 3.6761071912200193e-17
+      }
+    }
+    BallJoint {
+      jointParameters BallJointParameters {
+        position -445.38667325382556
+        anchor 0 -0.06 0.013
+      }
+      jointParameters2 JointParameters {
+        position 0.8516275780483579
+        axis 1 0 0
+      }
+      jointParameters3 JointParameters {
+        position -1154.229798204229
+        axis 0 1 0
+      }
+      endPoint Solid {
+        translation 1.3452998048890663e-08 -0.060000031385309516 0.012999878064650049
+        rotation 0.9216644863547943 -0.38258732154815367 0.06450981307493257 -1.7310304575253639
+        children [
+          DEF CasterBall_r2_2 Shape {
+            appearance PBRAppearance {
+              baseColor 0.333333 0.333333 0.498039
+              roughness 1
+              metalness 0
+            }
+            geometry Sphere {
+              radius 0.01
+            }
+          }
+        ]
+        name "r2_caster2"
+        boundingObject USE CasterBall_r2_2
+        physics Physics {
+        }
+        linearVelocity -5.980879797515864e-09 4.94286183431089e-09 4.663184371278654e-09
+        angularVelocity 0.08774865275110212 0.1064165364123729 -0.0002553723125296013
+      }
+    }
+  ]
+  name "robot2"
+  contactMaterial "plastic"
+  boundingObject USE Body_r2
+  physics Physics {
+  }
+  controller "robot2"
+  supervisor TRUE
+  selfCollision TRUE
+  linearVelocity 1.6622654658215437e-14 -4.726223692624864e-14 4.2324730264049915e-16
+  angularVelocity 1.710479225172095e-12 6.547243880806274e-13 -9.393378366045083e-14
+}
+DEF ROBOT3 Robot {
+  translation -1.3890571863817816 1.0392499993619706 -0.002167944529485523
+  rotation 6.529650264863576e-07 -1.594597655708729e-06 -0.9999999999985154 -3.0380599939046022
+  children [
+    DEF Body_r3 Pose {
+      translation 0 0 0.0255
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0
+            roughness 1
+            metalness 0
+          }
+          geometry Cylinder {
+            height 0.019
+            radius 0.075
+          }
+        }
+      ]
+    }
+    Compass {
+      rotation 0 0 1 1.5707996938995747
+    }
+    GPS {
+      rotation 0 0 1 1.5707996938995747
+    }
+    Transform {
+      translation 0 0 0.016
+      scale 0.001 0.001 0.001
+      children [
+        Shape {
+          appearance PBRAppearance {
+            roughness 1
+            metalness 0
+          }
+          geometry Mesh {
+            url [
+              "C:/Users/joaos/OneDrive/Escritorio/Tesis/Code/wbtlab11/Modelos_3D/Pololu/BumperV2.stl"
+            ]
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position -957.9631578204985
+        anchor 0.07 0 0.037
+      }
+      device [
+        RotationalMotor {
+          name "motor_1"
+          maxVelocity 84
+        }
+      ]
+      endPoint Solid {
+        translation 0.07 0 0.037
+        rotation -0.47876130197989775 -0.73616574008075 -0.4783802032461989 4.411529584238409
+        children [
+          DEF wheel_r3_1 Shape {
+            appearance PBRAppearance {
+              baseColor 0 0 0
+              roughness 1
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.035
+            }
+          }
+        ]
+        boundingObject USE wheel_r3_1
+        physics Physics {
+        }
+        linearVelocity 1.757985949679014e-15 1.935106370934297e-14 1.8462417102709598e-16
+        angularVelocity -5.516341016597587e-13 6.262286989606353e-14 6.539696570189109e-15
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position -815.7953510659007
+        anchor -0.07 0 0.037
+      }
+      device [
+        RotationalMotor {
+          name "motor_2"
+          maxVelocity 84
+        }
+      ]
+      endPoint Solid {
+        translation -0.07 0 0.037
+        rotation 0.4385763756717849 0.7846066704527632 0.43822726453705535 1.8102510528465723
+        children [
+          DEF wheel_r3_2 Shape {
+            appearance PBRAppearance {
+              baseColor 0 0 0
+              roughness 1
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.035
+            }
+          }
+        ]
+        name "r3_wheel2"
+        boundingObject USE wheel_r3_2
+        physics Physics {
+        }
+        linearVelocity 3.1293323988693204e-15 2.3233408855854048e-14 9.233030738985885e-17
+        angularVelocity -6.657820391099091e-13 7.41644221669235e-14 6.440898734757747e-15
+      }
+    }
+    BallJoint {
+      jointParameters BallJointParameters {
+        position 6.0714876330642085
+        anchor 0 0.06 0.013
+      }
+      jointParameters2 JointParameters {
+        position 1.5134445422709268
+        axis 1 0 0
+      }
+      jointParameters3 JointParameters {
+        position -356.43656578474247
+        axis 0 1 0
+      }
+      endPoint Solid {
+        translation 5.714661632794105e-09 0.06000004050030039 0.012999882776989552
+        rotation 0.6061888544718815 0.5552773727430793 -0.5693874884765308 2.015234109280352
+        children [
+          DEF CasterBall_r3_1 Shape {
+            appearance PBRAppearance {
+              baseColor 0.333333 0.333333 0.498039
+              roughness 1
+              metalness 0
+            }
+            geometry Sphere {
+              radius 0.01
+            }
+          }
+        ]
+        name "r3_caster1"
+        boundingObject USE CasterBall_r3_1
+        physics Physics {
+        }
+        linearVelocity 3.987190171976601e-12 1.605676658726902e-11 -1.3130018845262382e-11
+        angularVelocity 0.0003115163878890763 -7.745719200897835e-05 5.284923711138572e-18
+      }
+    }
+    BallJoint {
+      jointParameters BallJointParameters {
+        position -176.9488176544817
+        anchor 0 -0.06 0.013
+      }
+      jointParameters2 JointParameters {
+        position -0.24550741629086642
+        axis 1 0 0
+      }
+      jointParameters3 JointParameters {
+        position -1399.8117327034277
+        axis 0 1 0
+      }
+      endPoint Solid {
+        translation 2.3380465785649562e-08 -0.060000053613966764 0.0129999642798015
+        rotation -0.18104404850155806 0.5280086735723039 0.8297167547630827 -2.676067453843702
+        children [
+          DEF CasterBall_r3_2 Shape {
+            appearance PBRAppearance {
+              baseColor 0.333333 0.333333 0.498039
+              roughness 1
+              metalness 0
+            }
+            geometry Sphere {
+              radius 0.01
+            }
+          }
+        ]
+        name "r3_caster2"
+        boundingObject USE CasterBall_r3_2
+        physics Physics {
+        }
+        linearVelocity -4.17384850795049e-12 1.3159040242118746e-11 -2.6847857204903915e-11
+        angularVelocity -0.0004374684113704151 -0.00013902112467587568 1.1082848044665698e-17
+      }
+    }
+  ]
+  name "robot3"
+  contactMaterial "plastic"
+  boundingObject USE Body_r3
+  physics Physics {
+  }
+  controller "robot3"
+  supervisor TRUE
+  selfCollision TRUE
+  linearVelocity 2.4425581142013635e-15 2.413338879172459e-14 4.2324730264049915e-17
+  angularVelocity 7.481915082272045e-15 -2.7625714102065182e-15 6.698018987203653e-15
+}
+DEF ROBOT4 Robot {
+  translation -1.370474977649134 1.368233079476477 -0.0021679442478630927
+  rotation -1.103554947262924e-07 1.2409506812719808e-06 -0.999999999999224 -2.613406754591617
+  children [
+    DEF Body_r4 Pose {
+      translation 0 0 0.0255
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 1 0
+            roughness 1
+            metalness 0
+          }
+          geometry Cylinder {
+            height 0.019
+            radius 0.075
+          }
+        }
+      ]
+    }
+    Compass {
+      rotation 0 0 1 1.5707996938995747
+    }
+    GPS {
+      rotation 0 0 1 1.5707996938995747
+    }
+    Transform {
+      translation 0 0 0.016
+      scale 0.001 0.001 0.001
+      children [
+        Shape {
+          appearance PBRAppearance {
+            roughness 1
+            metalness 0
+          }
+          geometry Mesh {
+            url [
+              "C:/Users/joaos/OneDrive/Escritorio/Tesis/Code/wbtlab11/Modelos_3D/Pololu/BumperV2.stl"
+            ]
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position -1035.9777760519673
+        anchor 0.07 0 0.037
+      }
+      device [
+        RotationalMotor {
+          name "motor_1"
+          maxVelocity 84
+        }
+      ]
+      endPoint Solid {
+        translation 0.07 0 0.037
+        rotation 0.555955562380509 -0.6183192552663344 0.5555130162516965 4.249866690359503
+        children [
+          DEF wheel_r4_1 Shape {
+            appearance PBRAppearance {
+              baseColor 0 0 0
+              roughness 1
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.035
+            }
+          }
+        ]
+        boundingObject USE wheel_r4_1
+        physics Physics {
+        }
+        linearVelocity -9.727457296438353e-15 -1.672936426282821e-14 -2.7697403299922106e-16
+        angularVelocity 4.772220468244298e-13 -2.7569604089946454e-13 -1.452572196998545e-13
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position -896.2651256973949
+        anchor -0.07 0 0.037
+      }
+      device [
+        RotationalMotor {
+          name "motor_2"
+          maxVelocity 84
+        }
+      ]
+      endPoint Solid {
+        translation -0.07 0 0.037
+        rotation -0.6684337695998389 -0.32726690719900664 -0.6679016897051139 3.7746253452065424
+        children [
+          DEF wheel_r4_2 Shape {
+            appearance PBRAppearance {
+              baseColor 0 0 0
+              roughness 1
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.035
+            }
+          }
+        ]
+        name "r4_wheel2"
+        boundingObject USE wheel_r4_2
+        physics Physics {
+        }
+        linearVelocity -1.939655552100615e-14 -3.412242012473342e-14 8.308104262721906e-16
+        angularVelocity 9.729582193940164e-13 -5.623619011618133e-13 -1.456058243130764e-13
+      }
+    }
+    BallJoint {
+      jointParameters BallJointParameters {
+        position -715.9959212531387
+        anchor 0 0.06 0.013
+      }
+      jointParameters2 JointParameters {
+        position 1.1391580983087892
+        axis 1 0 0
+      }
+      jointParameters3 JointParameters {
+        position 284.3245317274098
+        axis 0 1 0
+      }
+      endPoint Solid {
+        translation -1.3093295780919334e-08 0.060000063637906 0.012999924177833959
+        rotation -0.8578227413257029 0.016145969736803857 0.5136919817611661 -1.2500653525394831
+        children [
+          DEF CasterBall_r4_1 Shape {
+            appearance PBRAppearance {
+              baseColor 0.333333 0.333333 0.498039
+              roughness 1
+              metalness 0
+            }
+            geometry Sphere {
+              radius 0.01
+            }
+          }
+        ]
+        name "r4_caster1"
+        boundingObject USE CasterBall_r4_1
+        physics Physics {
+        }
+        linearVelocity 1.6248038596351996e-12 4.855729437278738e-12 -3.315097445413893e-11
+        angularVelocity 0.0004831548619484828 -0.00016294383500597623 1.9735362710021176e-17
+      }
+    }
+    BallJoint {
+      jointParameters BallJointParameters {
+        position -213.812878159185
+        anchor 0 -0.06 0.013
+      }
+      jointParameters2 JointParameters {
+        position -0.24677503724429628
+        axis 1 0 0
+      }
+      jointParameters3 JointParameters {
+        position -778.4034598604353
+        axis 0 1 0
+      }
+      endPoint Solid {
+        translation -4.8745371072911325e-08 -0.060000040299968416 0.012999952216051682
+        rotation -0.898718158191953 0.18654711638607513 0.39687006123428376 1.1665249573609842
+        children [
+          DEF CasterBall_r4_2 Shape {
+            appearance PBRAppearance {
+              baseColor 0.333333 0.333333 0.498039
+              roughness 1
+              metalness 0
+            }
+            geometry Sphere {
+              radius 0.01
+            }
+          }
+        ]
+        name "r4_caster2"
+        boundingObject USE CasterBall_r4_2
+        physics Physics {
+        }
+        linearVelocity -1.2960053213914702e-09 -1.6675790036322337e-09 5.482713926585788e-09
+        angularVelocity 0.09322119504866862 -0.07248631351959756 -1.434106077324414e-05
+      }
+    }
+  ]
+  name "robot4"
+  contactMaterial "plastic"
+  boundingObject USE Body_r4
+  physics Physics {
+  }
+  controller "robot4"
+  supervisor TRUE
+  selfCollision TRUE
+  linearVelocity -1.0225906536948249e-14 -2.2951029920177194e-14 2.9627311184834943e-16
+  angularVelocity 3.374915355266981e-13 -1.915371696424508e-13 -1.4561772208921182e-13
+}
