@@ -7,7 +7,7 @@ clear all;
 % =========================================================================
 
 %% ---- PARAMETROS CONFIGURABLES ----
-N_agents = 4;       % Numero de agentes (lider + seguidores)
+N_agents = 8;       % Numero de agentes (lider + seguidores)
 d_sep    = 0.5;     % Distancia de separacion entre agentes consecutivos (m)
 
 %% Parametros del sistema
