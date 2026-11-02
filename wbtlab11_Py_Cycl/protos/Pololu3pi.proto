@@ -1,0 +1,172 @@
+#VRML_SIM R2023a utf8
+
+PROTO Pololu3pi[
+]
+{
+Robot {
+  children [
+    DEF Body Transform {
+      translation 0 0 0.0255
+      children [
+        Shape {
+          appearance PBRAppearance {
+            roughness 1
+            metalness 0
+          }
+          geometry Cylinder {
+            height 0.019
+            radius 0.075
+          }
+        }
+      ]
+    }
+    Transform {
+      translation 0 0 0.016
+      scale 0.001 0.001 0.001
+      children [
+        Shape {
+          appearance PBRAppearance {
+            roughness 1
+            metalness 0
+            castShadows FALSE
+          }
+          geometry Mesh {
+            url [
+              "../Modelos_3D/Pololu/BumperV2.stl"
+            ]
+          }
+        }
+      ]
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        anchor 0.07 0 0.037
+      }
+      device [
+        RotationalMotor {
+          name "motor_1"
+        }
+      ]
+      endPoint Solid {
+        translation 0.07 0 0.037
+        rotation -0.6667195291850914 0.33418188717234326 -0.6661888138426982 2.4960856161980307
+        children [
+          DEF wheel_1 Shape {
+            appearance PBRAppearance {
+              baseColor 0 0 0
+              roughness 1
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.035
+            }
+          }
+        ]
+        boundingObject USE wheel_1
+        physics Physics {
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        anchor -0.07 0 0.037
+      }
+      device [
+        RotationalMotor {
+          name "motor_2"
+        }
+      ]
+      endPoint Solid {
+        translation -0.07 0 0.037
+        rotation 0 1 0 1.57
+        children [
+          DEF wheel_2 Shape {
+            appearance PBRAppearance {
+              baseColor 0 0 0
+              roughness 1
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.035
+            }
+          }
+        ]
+        name "solid(1)"
+        boundingObject USE wheel_2
+        physics Physics {
+        }
+      }
+    }
+    BallJoint {
+      jointParameters BallJointParameters {
+        anchor 0 0.06 0.013
+      }
+      jointParameters2 JointParameters {
+        axis 1 0 0
+      }
+      jointParameters3 JointParameters {
+        axis 0 1 0
+      }
+      endPoint Solid {
+        translation 0 0.06 0.013
+        rotation 0 1 0 0
+        children [
+          DEF CasterBall_1 Shape {
+            appearance PBRAppearance {
+              baseColor 0.333333 0.333333 0.498039
+              roughness 1
+              metalness 0
+            }
+            geometry Sphere {
+              radius 0.01
+            }
+          }
+        ]
+        name "solid(2)"
+        boundingObject USE CasterBall_1
+        physics Physics {
+        }
+      }
+    }
+    BallJoint {
+      jointParameters BallJointParameters {
+        anchor 0 -0.06 0.013
+      }
+      jointParameters2 JointParameters {
+        axis 1 0 0
+      }
+      jointParameters3 JointParameters {
+        axis 0 1 0
+      }
+      endPoint Solid {
+        translation 0 -0.06 0.013
+        rotation 0 1 0 0
+        children [
+          DEF CasterBall_2 Shape {
+            appearance PBRAppearance {
+              baseColor 0.333333 0.333333 0.498039
+              roughness 1
+              metalness 0
+            }
+            geometry Sphere {
+              radius 0.01
+            }
+          }
+        ]
+        name "solid(3)"
+        boundingObject USE CasterBall_2
+        physics Physics {
+        }
+      }
+    }
+  ]
+  contactMaterial "plastic"
+  boundingObject USE Body
+  physics Physics {
+  }
+  controller "my_controller_EpuckPruebas"
+  selfCollision TRUE
+}
+}
